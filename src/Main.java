@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -33,16 +34,22 @@ public class Main {
                         switch (opcion) {
                             case 1: {
                                 UsuarioBasico usuarioBasico = new UsuarioBasico(correo, meses);
+                                double total = usuarioBasico.obtenerTotalPagar();
+                                System.out.println(total);
                             }
                             break;
 
                             case 2: {
                                 UsuarioEstandar usuarioEstandar = new UsuarioEstandar(correo, meses);
+                                double total = usuarioEstandar.obtenerTotalPagar();
+                                System.out.println(total);
                             }
                             break;
 
                             case 3: {
                                 UsuarioPremium usuarioPremium = new UsuarioPremium(correo, meses);
+                                double total = usuarioPremium.obtenerTotalPagar();
+                                System.out.println(total);
                             }
                             break;
                         }
