@@ -13,38 +13,57 @@ public class Main {
         do {
             try {
                 System.out.println("---------------Plataforma de streaming----------");
-                System.out.println("Ingrese su correo: ");
-                String correo = teclado.next();
-                System.out.println("Cuantos meses va a contratar? : ");
-                int meses = teclado.nextInt();
-                System.out.println("Seleccione un plan");
-                System.out.println("1.Basico");
-                System.out.println("2.Estandar");
-                System.out.println("3.Premium");
+                System.out.println("1.Agregar usuario");
+                System.out.println("2.Ver reporte");
                 System.out.println("0.Salir");
                 opcion = teclado.nextInt();
 
-                switch (opcion){
-                    case 1:{
-                        PlanBasico planBasico = new PlanBasico();
-                    }break;
+                switch (opcion) {
+                    case 1: {
+                        System.out.println("Ingrese su correo: ");
+                        String correo = teclado.next();
+                        System.out.println("Cuantos meses va a contratar? : ");
+                        int meses = teclado.nextInt();
+                        System.out.println("Seleccione un plan");
+                        System.out.println("1.Basico");
+                        System.out.println("2.Estandar");
+                        System.out.println("3.Premium");
+                        opcion = teclado.nextInt();
 
-                    case 2:{
-                        PlanEstandar planEstandar = new PlanEstandar();
-                    }break;
+                        switch (opcion) {
+                            case 1: {
+                                UsuarioBasico usuarioBasico = new UsuarioBasico(correo, meses);
+                            }
+                            break;
 
-                    case 3:{
-                        PlanPremium planPremium = new PlanPremium();
-                    }break;
+                            case 2: {
+                                UsuarioEstandar usuarioEstandar = new UsuarioEstandar(correo, meses);
+                            }
+                            break;
 
-                    case 0:{
+                            case 3: {
+                                UsuarioPremium usuarioPremium = new UsuarioPremium(correo, meses);
+                            }
+                            break;
+                        }
+                    }
+                    break;
+
+                    case 2: {
+                        plataforma.Reporte();
+                    }
+                    break;
+
+                    case 0: {
                         System.out.println("Saliendo... adios.");
-                    }break;
+                    }
+                    break;
 
-                    default:{
+                    default: {
                         System.out.println("Opcion invalida");
                     }
                 }
+
 
 
             }catch (Exception e){
