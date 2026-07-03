@@ -48,6 +48,7 @@ public class Main {
 
                             case 3: {
                                 UsuarioPremium usuarioPremium = new UsuarioPremium(correo, meses);
+                                plataforma.AgregarCuentaUsuario(usuarioPremium);
                                 double total = usuarioPremium.obtenerTotalPagar();
                                 System.out.println(total);
                             }
