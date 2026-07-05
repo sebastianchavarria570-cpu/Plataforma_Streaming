@@ -29,11 +29,12 @@ public class Main {
                         System.out.println("1.Basico");
                         System.out.println("2.Estandar");
                         System.out.println("3.Premium");
-                        opcion = teclado.nextInt();
+                        int opcionPlan = teclado.nextInt();
 
-                        switch (opcion) {
+                        switch (opcionPlan) {
                             case 1: {
                                 UsuarioBasico usuarioBasico = new UsuarioBasico(correo, meses);
+                                plataforma.AgregarCuentaUsuario(usuarioBasico);
                                 double total = usuarioBasico.obtenerTotalPagar();
                                 System.out.println(total);
                             }
@@ -41,6 +42,7 @@ public class Main {
 
                             case 2: {
                                 UsuarioEstandar usuarioEstandar = new UsuarioEstandar(correo, meses);
+                                plataforma.AgregarCuentaUsuario(usuarioEstandar);
                                 double total = usuarioEstandar.obtenerTotalPagar();
                                 System.out.println(total);
                             }
