@@ -11,6 +11,10 @@ public class Main {
 
         PlataformaStreaming plataforma = new PlataformaStreaming();
 
+
+        System.out.println("MI MEUUUUUUUUUUUUU");
+
+
         do {
             try {
                 System.out.println("---------------Plataforma de streaming----------");
